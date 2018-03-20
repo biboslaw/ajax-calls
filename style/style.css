@@ -1,0 +1,27 @@
+body {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 60px;
+    font-family: sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+.btn {
+    margin: 0 auto;
+    display: block;
+    width: 190px;
+    height: 40px;
+    font-size: 1.1em;
+    transition: 0.5s linear;
+}
+
+.main {
+    margin: 0 auto;
+}
+
+.hidden {
+    opacity: 0;
+}
