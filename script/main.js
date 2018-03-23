@@ -53,10 +53,12 @@ function getJSON(count, button) {
 }
 
 function fillDiv(ajaxObiect) {
+    var p
     var divContent = ""
     var mainDiv = document.querySelector('#main')
+    var textNode;
     for (var i = 0; i < ajaxObiect.length; i++) {
-        divContent += '<p>' + ajaxObiect[i].name + ' is a ' + ajaxObiect[i].species  + ' and likes: '
+        divContent = ajaxObiect[i].name + ' is a ' + ajaxObiect[i].species  + ' and likes: '
         for (var j = 0; j<ajaxObiect[i].foods.likes.length; j++){
             if (j===0   ){
                 divContent += ajaxObiect[i].foods.likes[j]
@@ -72,7 +74,11 @@ function fillDiv(ajaxObiect) {
                 divContent += " and " + ajaxObiect[i].foods.dislikes[j]
             }
         }
-        divContent += '.</p>'
+        p = document.createElement('p')
+        textNode = document.createTextNode(divContent)
+        p.appendChild(textNode)
+        mainDiv.appendChild(p)
+        textNode = ""
+        p = ""
     }
-    mainDiv.insertAdjacentHTML('beforeend', divContent)
 }
